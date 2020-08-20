@@ -16,7 +16,11 @@
     "slider"
   ],
   "scripts": {
-    "prepare": "babel --out-dir dist js"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "yarn validate:eslint && yarn validate:flow && yarn test:jest",
+    "validate:eslint": "eslint 'js/**/*.js' 'example/**/*.js'",
+    "validate:flow": "flow check",
+    "test:jest": "jest"
   },
   "peerDependencies": {
     "react": "*",
